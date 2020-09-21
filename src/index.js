@@ -1,6 +1,10 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 
-const app = document.getElementById('app');
+// Components
+import App from './App';
 
-render(<h1>Hola mundo!</h1>, app);
+// Styles
+import './global.scss';
+
+ReactDOM.render(<App />, document.getElementById('app'));

@@ -1,22 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.js'),
-  mode: 'development',
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name]-[hash].js',
     publicPath: '/'
-  },
-  devServer: {
-    open: true,
-    inline: true,
-    contentBase: '/',
-    hot: true,
-    historyApiFallback: true
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -36,11 +28,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html'),
-      filename: './index.html'
-    })
-  ]
+  plugins: []
 };

@@ -1,0 +1,41 @@
+@import '../../global.scss';
+
+.Header {
+  height: 60px;
+  padding: $padding;
+  border-bottom: 2px solid rgb(220, 220, 220);
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(#aeaeae, 0.5);
+
+  .Header_Navbar {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+
+    .Header_Navbar-Link {
+      margin: 0 20px;
+
+      a {
+        color: black;
+        text-decoration: none;
+        padding: 5px 0;
+
+        &.header_navlink-active {
+          border-bottom: 2px solid #000;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .Header {
+    padding: 0;
+
+    .Header_Navbar {
+      justify-content: center;
+    }
+  }
+}
